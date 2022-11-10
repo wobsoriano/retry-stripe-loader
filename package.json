@@ -1,6 +1,6 @@
 {
   "name": "retry-stripe-loader",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "packageManager": "pnpm@7.14.0",
   "description": "",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
@@ -11,7 +11,12 @@
     "url": "git+https://github.com/wobsoriano/retry-stripe-loader.git"
   },
   "bugs": "https://github.com/wobsoriano/retry-stripe-loader/issues",
-  "keywords": ["stripe", "retry", "payment", "loader"],
+  "keywords": [
+    "stripe",
+    "retry",
+    "payment",
+    "loader"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
