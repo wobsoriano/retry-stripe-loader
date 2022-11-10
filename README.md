@@ -1,12 +1,29 @@
-# library-starter
+# retry-stripe-loader
 
-Features:
+Stripe.js `loadStripe` function with retries.
 
-- Package manager [pnpm](https://pnpm.js.org/), safe and fast
-- Execute TypeScript with [tsx](https://github.com/esbuild-kit/tsx)
-- Bundle with [tsup](https://github.com/egoist/tsup)
-- Test with [vitest](https://vitest.dev)
+## Install
+
+```bash
+pnpm add @stripe/stripe-js retry-stripe-loader
+```
+
+## Usage
+
+```ts
+import { loadStripe } from 'retry-stripe-loader'
+
+const stripe = await loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh', {
+  onFailedAttempt: (error) => {
+    console.log(`Attempt ${error.attemptNumber} failed. There are ${error.retriesLeft} retries left.`)
+    // 1st request => Attempt 1 failed. There are 4 retries left.
+    // 2nd request => Attempt 2 failed. There are 3 retries left.
+    // …
+  },
+  retries: 5
+})
+```
 
 ## License
 
-[MIT](./LICENSE) License © 2022 [Robert Soriano](https://github.com/wobsoriano)
+MIT

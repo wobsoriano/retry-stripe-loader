@@ -1,17 +1,17 @@
 {
-  "name": "pkg-name",
+  "name": "retry-stripe-loader",
   "version": "0.0.0",
   "packageManager": "pnpm@7.14.0",
   "description": "",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/wobsoriano/pkg-name#readme",
+  "homepage": "https://github.com/wobsoriano/retry-stripe-loader#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wobsoriano/pkg-name.git"
+    "url": "git+https://github.com/wobsoriano/retry-stripe-loader.git"
   },
-  "bugs": "https://github.com/wobsoriano/pkg-name/issues",
-  "keywords": [],
+  "bugs": "https://github.com/wobsoriano/retry-stripe-loader/issues",
+  "keywords": ["stripe", "retry", "payment", "loader"],
   "sideEffects": false,
   "exports": {
     ".": {
@@ -28,21 +28,24 @@
   ],
   "scripts": {
     "build-fast": "tsup src/index.ts --format cjs,esm",
-    "build": "nr build-fast --dts-resolve",
+    "build": "pnpm build-fast --dts-resolve",
     "lint": "eslint .",
-    "prepublishOnly": "nr build",
+    "prepublishOnly": "pnpm build",
     "release": "bumpp && npm publish",
     "start": "tsx src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@stripe/stripe-js": "*",
+    "p-retry": "^5.1.1"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
-    "@antfu/ni": "^0.18.2",
+    "@stripe/stripe-js": "^1.42.1",
     "bumpp": "^8.2.1",
     "eslint": "^8.26.0",
-    "pnpm": "^7.14.0",
-    "tsup": "6.0.1",
+    "tsup": "6.4.0",
     "tsx": "^3.10.4",
     "typescript": "^4.7.4",
     "vitest": "^0.24.3"
