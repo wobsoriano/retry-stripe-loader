@@ -1,7 +1,7 @@
 {
   "name": "retry-stripe-loader",
   "version": "0.1.1",
-  "description": "",
+  "description": "Stripe.js loadStripe function with retries.",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/wobsoriano/retry-stripe-loader#readme",
@@ -44,7 +44,7 @@
     "@stripe/stripe-js": "*"
   },
   "dependencies": {
-    "p-retry": "^5.1.1"
+    "p-retry": "^6.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
