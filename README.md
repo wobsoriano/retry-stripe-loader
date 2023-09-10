@@ -5,7 +5,7 @@ Stripe.js `loadStripe` function with retries.
 ## Install
 
 ```bash
-pnpm add @stripe/stripe-js retry-stripe-loader
+npm install @stripe/stripe-js retry-stripe-loader
 ```
 
 ## Usage
