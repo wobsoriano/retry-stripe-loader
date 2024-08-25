@@ -5,5 +5,10 @@ import pRetry from 'p-retry';
 
 export const loadStripe = (
 	publishableKey: string,
-	options?: StripeConstructorOptions & RetryOptions,
-) => pRetry(() => _loadStripe(publishableKey, options), options);
+	options?: StripeConstructorOptions & {
+		retryOptions?: RetryOptions;
+	},
+) => {
+	const { retryOptions, ...rest } = options || {};
+	return pRetry(() => _loadStripe(publishableKey, rest), retryOptions);
+};
