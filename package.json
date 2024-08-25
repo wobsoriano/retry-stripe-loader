@@ -44,7 +44,7 @@
     "@stripe/stripe-js": "*"
   },
   "dependencies": {
-    "p-retry": "^6.0.0"
+    "p-retry": "^6.2.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
